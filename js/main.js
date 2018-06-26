@@ -17,4 +17,10 @@ $().ready(function(){
     let GradientCSS = 'background: linear-gradient(to top, ' + colorFrom + ', ' + colorTo + ')';
 
     $('#example').css(GradientCSS)
+
+
+
+    App.Canvas.create('#example');
+    App.ControlPanel.create('#control-panel');
+    App.ControlPanel.addOnChangeListener(App.Canvas.draw);
 });
