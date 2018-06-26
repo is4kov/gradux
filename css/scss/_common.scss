@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: Georgia;
+  font-size: 1em;
+  line-height: 1.25;
+  color: #222;
+}
+
+a {
+  color: #222;
+  text-decoration: underline;
+
+  &:hover {
+    color: #666;
+  }
+}
+
+input[type="text"] {
+  padding: 4px;
+}

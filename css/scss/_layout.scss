@@ -1,0 +1,16 @@
+.l-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.l-options {
+  width: 60%;
+  padding: 20px 40px;
+  border-right: 2px solid $black;
+}
+
+.l-example {
+  flex: 1;
+  padding: 20px 40px;
+}

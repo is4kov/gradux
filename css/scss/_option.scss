@@ -1,0 +1,92 @@
+.option {
+  display: flex;
+  flex-direction: row;
+
+  &:not(:last-child) {
+    border-bottom: 2px solid $black;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__cell {
+    margin: .5em 0;
+  }
+
+  &__input {
+
+    &.is-small {
+      width: 40px;
+    }
+
+    &.is-medium {
+      width: 100px;
+    }
+
+    &.is-large {
+      width: 180px;
+    }
+
+    &.is-color {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+
+      &::-webkit-color-swatch-wrapper {
+        padding: 2px;
+      }
+
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    min-width: 60px;
+    padding: 5px 10px;
+    background-color: #666;
+    vertical-align: middle;
+    color: $white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #222;
+    }
+
+    & + & {
+      margin-left: 10px;
+    }
+  }
+
+  &__description {
+    font-size: .75em;
+    color: #888;
+  }
+
+  &__controls {
+    flex: 0;
+    width: 40px;
+    padding: 20px;
+  }
+
+  &__control {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #666;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2em;
+    line-height: 40px;
+    color: $white;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #222;
+    }
+
+    & + & {
+      margin-top: 20px;
+    }
+  }
+}

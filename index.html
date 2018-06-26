@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>GradUX</title>
+	<link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<div class="l-container">
+	<div class="l-options">
+		<div class="option" data-elem="options-gradient1">
+			<div class="option__content">
+				<div class="option__cell">
+					<label class="option__label">
+						<span class="option__entity">From</span>
+						<input type="color" class="option__input is-color" value="#00aa44" data-elem="from-color"/>
+					</label>
+					<label class="option__label">
+						<span class="option__entity">rgba</span>
+						<input type="checkbox" data-elem="is-from-rgba"/>
+					</label>
+					<label class="option__label">
+						<span class="option__entity">opacity</span>
+						<input type="range" name="" min="0" max="1" step="0.01" value=".5" data-elem="from-opacity"/>
+					</label>
+				</div>
+				<div class="option__cell">
+					<label class="option__label">
+						<span class="option__entity">To</span>
+						<input type="color" class="option__input is-color" value="#e7a94a" data-elem="to-color"/>
+					</label>
+					<label class="option__label">
+						<span class="option__entity">rgba</span>
+						<input type="checkbox" data-elem="is-to-rgba"/>
+					</label>
+					<label class="option__label">
+						<span class="option__entity">opacity</span>
+						<input type="range" name="" min="0" max="1" step="0.01" value=".5" data-elem="to-opacity"/>
+					</label>
+				</div>
+				<div class="option__cell" data-elem="gradient-direction">
+					<span class="option__button" data-value="left">to left</span>
+					<span class="option__button" data-value="top">to top</span>
+					<span class="option__button" data-value="right">to right</span>
+					<span class="option__button" data-value="bottom">to bottom</span>
+					<label class="option__label">
+						<span class="option__entity">other</span>
+						<input type="checkbox" data-elem="is-custom-direction"/>
+					</label>
+					<label class="option__label">
+						<input type="text" name="" class="option__input is-small" data-value="custom"/>
+						<small class="option__description">deg</small>
+					</label>
+				</div>
+				<div class="option__cell">
+					<label>
+						<input type="checkbox" data-elem="is-background-size"/>
+						<span>background size</span>
+					</label>
+					<label>
+						<input type="text" name="" class="option__input is-small" data-elem="background-size-x"/>
+						<span>x</span>
+					</label>
+					<label>
+						<input type="text" name="" class="option__input is-small" data-elem="background-size-y"/>
+						<span>y</span>
+					</label>
+				</div>
+			</div>
+			<div class="option__controls">
+				<span class="option__control option__add">&plus;</span>
+				<span class="option__control option__remove">&minus;</span>
+				<span class="option__control option__order option__order--up">&#8679;</span>
+				<span class="option__control option__order option__order--down">&#8681;</span>
+			</div>
+		</div>
+		<div class="start">
+			<button class="start__button">Generate</button>
+		</div>
+	</div>
+	<div class="l-example">
+		<div id="example"></div>
+	</div>
+</div>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
