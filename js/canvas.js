@@ -1,17 +1,21 @@
 var App = App || {};
 App.Canvas = (function(){
-  var node;
+  var canvas,
+    result;
 
   var create = function(el){
     if (typeof el !== 'string' || !el.length)
       return;
 
-    node = document.querySelector(el);
+    canvas = document.querySelector(el);
+    result = document.getElementById('result');
   };
 
   var draw = function(gradient){
     if (gradient){
-      node.style = gradient.toString();
+      gradientCss = gradient.toString()
+      canvas.style = gradientCss;
+      result.textContent = gradientCss;
     }
   };
 
