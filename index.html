@@ -13,7 +13,7 @@
 				<div class="option__cell">
 					<label class="option__label">
 						<span class="option__entity">From</span>
-						<input type="color" class="option__input is-color" value="#00aa44" data-elem="from-color"/>
+						<input type="color" class="option__input is-color" value="#00aa44" data-elem="from-color" data-key="color-stop" id="from-color" />
 					</label>
 					<label class="option__label">
 						<span class="option__entity">rgba</span>
@@ -21,13 +21,13 @@
 					</label>
 					<label class="option__label">
 						<span class="option__entity">opacity</span>
-						<input type="range" name="" min="0" max="1" step="0.01" value=".5" data-elem="from-opacity"/>
+						<input type="range" name="" min="0" max="1" step="0.01" value=".5" data-elem="from-opacity" data-for="from-color"/>
 					</label>
 				</div>
 				<div class="option__cell">
 					<label class="option__label">
 						<span class="option__entity">To</span>
-						<input type="color" class="option__input is-color" value="#e7a94a" data-elem="to-color"/>
+						<input type="color" class="option__input is-color" value="#e7a94a" data-elem="to-color" data-key="color-stop" id="to-color" />
 					</label>
 					<label class="option__label">
 						<span class="option__entity">rgba</span>
@@ -35,20 +35,28 @@
 					</label>
 					<label class="option__label">
 						<span class="option__entity">opacity</span>
-						<input type="range" name="" min="0" max="1" step="0.01" value=".5" data-elem="to-opacity"/>
+						<input type="range" name="" min="0" max="1" step="0.01" value=".5" data-elem="to-opacity" data-for="to-color" />
 					</label>
 				</div>
 				<div class="option__cell" data-elem="gradient-direction">
-					<span class="option__button" data-value="left">to left</span>
-					<span class="option__button" data-value="top">to top</span>
-					<span class="option__button" data-value="right">to right</span>
-					<span class="option__button" data-value="bottom">to bottom</span>
-					<label class="option__label">
-						<span class="option__entity">other</span>
-						<input type="checkbox" data-elem="is-custom-direction"/>
+					<label class="option__button">
+						<input type="radio" name="direction" data-key="direction" data-value="left" value="to left" checked>to left
+					</label>
+					<label class="option__button">
+						<input type="radio" name="direction" data-key="direction" data-value="top" value="to top">to top
+					</label>
+					<label class="option__button">
+						<input type="radio" name="direction" data-key="direction" data-value="right" value="to right">to right
+					</label>
+					<label class="option__button">
+						<input type="radio" name="direction" data-key="direction" data-value="bottom" value="to bottom">to bottom
 					</label>
 					<label class="option__label">
-						<input type="text" name="" class="option__input is-small" data-value="custom"/>
+						<span class="option__entity">other</span>
+						<input type="checkbox" data-elem="is-custom-direction" data-for="direction-custom"/>
+					</label>
+					<label class="option__label">
+						<input type="text" name="" class="option__input is-small" data-value="custom" data-key="direction" id="direction-custom"/>
 						<small class="option__description">deg</small>
 					</label>
 				</div>

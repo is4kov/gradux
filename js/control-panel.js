@@ -23,10 +23,40 @@ App.ControlPanel = (function(){
     }
   };
 
+  function hexToRGB(hex, alpha) {
+    var r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
+
+    if (alpha) {
+        return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+    } else {
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+  }
+
   var getOptions = function(){
-    var res = {};
-    panel.querySelectorAll('input.is-color').forEach(function(input){
-      res[input.getAttribute('data-elem')] = input.value;
+    var res = {
+      'color-stop': []
+    };
+    panel.querySelectorAll('input[data-key]').forEach(function(input){
+      var key = input.getAttribute('data-key');
+      switch (key) {
+        case 'color-stop' :
+          res[key].push(hexToRGB(input.value, panel.querySelector(`input[data-for=${input.id}]`).value));
+          break;
+        case 'direction' :
+          if (input.id === 'direction-custom' &&
+            panel.querySelector(`input[data-for=${input.id}]`).checked &&
+            !!parseInt(input.value)){
+            res[key] = `${input.value}deg`;
+          } else if (input.checked) {
+            res[key] = input.value;
+          }
+          break;
+        default :
+          res[key] = input.value;
+      }
     });
 
     return new Gradient(res);

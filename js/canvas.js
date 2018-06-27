@@ -11,7 +11,7 @@ App.Canvas = (function(){
 
   var draw = function(gradient){
     if (gradient){
-      node.style = `background: linear-gradient(${gradient['from-color']}, ${gradient['to-color']});`;
+      node.style = gradient.toString();
     }
   };
 
